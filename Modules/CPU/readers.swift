@@ -145,6 +145,7 @@ internal class LoadReader: Reader<CPU_Load> {
             
             self.response.usageECores = eCoresList.reduce(0, +)/Double(eCoresList.count)
             self.response.usagePCores = pCoresList.reduce(0, +)/Double(pCoresList.count)
+            self.response.totalUsage = eCoresList.reduce(0, +) + pCoresList.reduce(0, +)
         }
         
         self.callback(self.response)
